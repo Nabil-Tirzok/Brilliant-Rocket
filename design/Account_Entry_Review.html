@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tannix Leather account entry review</title>
+<style>
+    body {
+        margin: 0;
+        background: #e8effa;
+        color: #08194a;
+        font-family: system-ui, sans-serif
+    }
+
+    header {
+        padding: 24px;
+        background: white;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid #c2cee3
+    }
+
+    h1 {
+        font-size: 22px;
+        margin: 0 0 12px
+    }
+
+    nav {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap
+    }
+
+    a {
+        color: #0050cb
+    }
+
+    main {
+        max-width: 1330px;
+        margin: auto;
+        padding: 16px
+    }
+
+    section {
+        scroll-margin-top: 145px;
+        margin-bottom: 32px
+    }
+
+    svg {
+        width: 100%;
+        height: auto
+    }
+
+    p {
+        line-height: 1.5
+    }
+</style>
+<header>
+    <h1>Tannix Leather · Account entry review</h1>
+    <nav><a href="#board0">Welcome, login &amp; registration</a><a href="#board1">Password reset request</a><a
+            href="#board2">Verification &amp; new password</a><a href="#board3">Completion &amp; recovery</a><a
+            href="#board4">Form and recovery states</a></nav>
+</header>
+<main>
+    <p>Review draft for iOS and Android. Email-link verification is proposed. Figma import and backend behaviour require
+        validation.</p>
+    <section id="board0" aria-label="Welcome, login &amp; registration"><svg xmlns="http://www.w3.org/2000/svg"
+            width="1330" height="2100" viewBox="0 0 1330 2100">
+            <defs xmlns="http://www.w3.org/2000/svg">
+                <linearGradient id="bag" x2="1" y2="1">
+                    <stop offset="0" stop-color="#246DFF" />
+                    <stop offset="1" stop-color="#00338D" />
+                </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="1330" height="2100" rx="24" fill="#E8EFFA" stroke="none" /><text x="44" y="64"
+                fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="32" font-weight="750"
+                text-anchor="start">Account entry · Welcome, login &amp; registration</text><text x="44" y="102"
+                fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="400"
+                text-anchor="start">Existing design · Latest saved version · Tannix Leather</text><text x="44" y="148"
+                fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                text-anchor="start">IOS</text>
+            <g xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" id="launch-ios"
+                transform="translate(44 200)"><text x="1" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Launch</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149.5" y="15" width="94" height="25" rx="13" fill="#08194A" />
+                <path d="M315 31 l7 -7 7 7 M319 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="144.5" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <image x="94.5" y="68" width="204" height="68"
+                    href="data:image/jpeg;base64,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Fs0RNrgGNV26ir2tbWUcFQ1hy0SxhwHhlfmktdvoHOdR0NNTucMOMUTWEjvwFlomXwDWy6fs08rpZbTQySPOXPfTtJJ7ScLJlt9FPRijmpIJKYAAQvjBYAOXDkslEyxg19LYrRRTtnpbZRwSjk+KBrXDzAXvXW6iudMaevpIKmE845ow9vsKyUTL5BzFHs70hQVXpNPYKNsucguaXgHuDiQFuauy2qvex9ZbaSocxu60ywtcWjsGRyWcilyk+WRhGLT2ygpKZ9NTUVPDA/O/FHGGtdngcgcCsSLTNihkbJFZbex7SHNc2mYCD2jgtqijLJwFrJ9OWOpnfPPZ6CWV5y976dhc49pOFs0RNrgHnBBDSwMgp4mRQsGGsY0Na0dwCw7pY7Ve4RFc7fTVbByE0YdjwPUtgiJtPINJatH6dskgkttmo6eUcpGxAvH9Y8Vu0RG2+Qa+ssVpuE/T1lspKiXGN+WFrnY8SF70dvo7dCYaKlhpoyd4siYGgntwFkorOybXa3sV7UnnB+JYY6iJ8U0bZI3jdcx4yHDsIWq+1XT34Et/5sz9i3CJGycPwtoOMXyjzhp4aeBkEMTI4mDdaxrcNA7AFpa3RenLjN01TaKZ0h5uaCzPju4yt8imFtkH3Qk0/ZiUIyWGjX22xWq0M3bfQQU/UXMYMnxPMrYIirKUpvuk8slJJYR41VJTVsJhqqeKeJ3NkjA4HyK0bNB6XZP0zbLTb+c8clvsJx8y6JFeF1taxCTX0ZEoRlu1k84YIYIhFDEyONowGMaAB5LWHSun3OLjZbeSTkk07f2LboqxsnHeLaDjF8o/LGNjYGMaGtaMBoGAAtZLpmxTzPmls9C+R5LnPdTtJJ7TwW1RRGco7xeCXFPlGNRW6jt0JhoqWGmiJ3iyJgaCe3AWtuOkNP3WXpqy1U8kp5vA3CfEtxlbtFaN1kZd0ZNP1yQ4Raw1sae26UsNpfv0Nrp4pOp+7vOHgTkrcIiidk7HmbbfuTGKisJYPCroqWvgMFXTxTxHmyRgcPYVpqfQ+maWcTRWalEg4jeBcB5EkLoEUwusgu2Mml9SHCMnlo+NaGNDWgBoGAB1L6iLMsF8c0OaWnkeBX1EBqavTVqr27tXBJMzOd188hb7N7C/VBpyy2yQSUdspYZBye2Mbw8+a2iLTxrO3t7nj6lPDjnOAiIsy4REQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREB//9k="
+                    ns1:href="data:image/jpeg;base64,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Fs0RNrgGNV26ir2tbWUcFQ1hy0SxhwHhlfmktdvoHOdR0NNTucMOMUTWEjvwFlomXwDWy6fs08rpZbTQySPOXPfTtJJ7ScLJlt9FPRijmpIJKYAAQvjBYAOXDkslEyxg19LYrRRTtnpbZRwSjk+KBrXDzAXvXW6iudMaevpIKmE845ow9vsKyUTL5BzFHs70hQVXpNPYKNsucguaXgHuDiQFuauy2qvex9ZbaSocxu60ywtcWjsGRyWcilyk+WRhGLT2ygpKZ9NTUVPDA/O/FHGGtdngcgcCsSLTNihkbJFZbex7SHNc2mYCD2jgtqijLJwFrJ9OWOpnfPPZ6CWV5y976dhc49pOFs0RNrgHnBBDSwMgp4mRQsGGsY0Na0dwCw7pY7Ve4RFc7fTVbByE0YdjwPUtgiJtPINJatH6dskgkttmo6eUcpGxAvH9Y8Vu0RG2+Qa+ssVpuE/T1lspKiXGN+WFrnY8SF70dvo7dCYaKlhpoyd4siYGgntwFkorOybXa3sV7UnnB+JYY6iJ8U0bZI3jdcx4yHDsIWq+1XT34Et/5sz9i3CJGycPwtoOMXyjzhp4aeBkEMTI4mDdaxrcNA7AFpa3RenLjN01TaKZ0h5uaCzPju4yt8imFtkH3Qk0/ZiUIyWGjX22xWq0M3bfQQU/UXMYMnxPMrYIirKUpvuk8slJJYR41VJTVsJhqqeKeJ3NkjA4HyK0bNB6XZP0zbLTb+c8clvsJx8y6JFeF1taxCTX0ZEoRlu1k84YIYIhFDEyONowGMaAB5LWHSun3OLjZbeSTkk07f2LboqxsnHeLaDjF8o/LGNjYGMaGtaMBoGAAtZLpmxTzPmls9C+R5LnPdTtJJ7TwW1RRGco7xeCXFPlGNRW6jt0JhoqWGmiJ3iyJgaCe3AWtuOkNP3WXpqy1U8kp5vA3CfEtxlbtFaN1kZd0ZNP1yQ4Raw1sae26UsNpfv0Nrp4pOp+7vOHgTkrcIiidk7HmbbfuTGKisJYPCroqWvgMFXTxTxHmyRgcPYVpqfQ+maWcTRWalEg4jeBcB5EkLoEUwusgu2Mml9SHCMnlo+NaGNDWgBoGAB1L6iLMsF8c0OaWnkeBX1EBqavTVqr27tXBJMzOd188hb7N7C/VBpyy2yQSUdspYZBye2Mbw8+a2iLTxrO3t7nj6lPDjnOAiIsy4REQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREB//9k=" />
+                <rect x="24" y="151" width="345" height="270" rx="25" fill="#EEF4FF" />
+                <circle cx="196.5" cy="284" r="102" fill="#DFEAFF" />
+                <circle cx="196.5" cy="284" r="79" fill="#D3E4FF" />
+                <g transform="rotate(-11 196 279)">
+                    <rect x="123" y="207" width="146" height="160" rx="30" fill="url(#bag)" />
+                    <path d="M166 227 v-22 a30 30 0 0 1 60 0 v22" fill="none" stroke="#A7CCFF" stroke-width="7"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M173 283 l16 16 32 -33" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </g>
+                <circle cx="285" cy="207" r="25" fill="#CFE1FF" />
+                <path d="M285 198 v18 M276 207 h18" fill="none" stroke="#0050CB" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <circle cx="104" cy="327" r="8" fill="#A6CAFF" /><text x="24" y="476" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="36" font-weight="750"
+                    text-anchor="start">Shop with</text><text x="24" y="521" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="34" font-weight="750" text-anchor="start"
+                    id="customer-name-launch-ios">Tannix Leather</text><text x="24" y="562" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Browse products and track your orders</text><text x="24" y="585" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">from your phone.</text>
+                <rect x="24" y="638" width="345" height="52" rx="14" fill="#0050CB" /><text x="196.5" y="670"
+                    fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in</text>
+                <rect x="24" y="702" width="345" height="52" rx="14" fill="white" stroke="#ABB8CC" /><text x="196.5"
+                    y="734" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Create an account</text>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="login-ios" transform="translate(469 200)"><text x="1" y="-16"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Login</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149.5" y="15" width="94" height="25" rx="13" fill="#08194A" />
+                <path d="M315 31 l7 -7 7 7 M319 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="144.5" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="34" font-weight="750"
+                    text-anchor="start">Welcome back</text><text x="24" y="184" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Log in to manage your orders.</text><text x="24" y="248" fill="#111E3C"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Email address</text>
+                <rect x="24" y="258" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                    y="290" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">you@example.com</text><text x="24" y="340" fill="#111E3C"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Password</text>
+                <rect x="24" y="350" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                    y="382" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Enter your password</text>
+                <path d="M335 376 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="345" cy="376" r="2.4" fill="#485873" /><text x="369" y="434" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="end">Forgot password?</text>
+                <rect x="24" y="468" width="345" height="52" rx="14" fill="#0050CB" /><text x="196.5" y="500"
+                    fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in</text><text x="196.5" y="740" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="middle">New to Tannix Leather?</text><text x="196.5" y="772" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="middle">Create an account</text>
+                <g id="social-sign-in-ios" font-family="Inter, DejaVu Sans, sans-serif">
+                    <line x1="24" x2="172.5" y1="548" y2="548" stroke="#C2CEE3" />
+                    <line x1="220.5" x2="369" y1="548" y2="548" stroke="#C2CEE3" /><text x="196.5" y="553"
+                        text-anchor="middle" font-size="14" fill="#485873">or</text>
+                    <g id="continue-with-google-ios">
+                        <rect x="24" y="570" width="345" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="196.5" y="600" text-anchor="middle" font-size="16" font-weight="700"
+                            fill="#08194A">Continue with Google</text>
+                    </g>
+                    <g id="continue-with-facebook-ios">
+                        <rect x="24" y="630" width="345" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="196.5" y="660" text-anchor="middle" font-size="16" font-weight="700"
+                            fill="#08194A">Continue with Facebook</text>
+                    </g>
+                </g>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="registration-ios" transform="translate(894 200)"><text x="1"
+                    y="-16" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Registration</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149.5" y="15" width="94" height="25" rx="13" fill="#08194A" />
+                <path d="M315 31 l7 -7 7 7 M319 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="144.5" y="827" width="104" height="4" rx="2" fill="#08194A"
+                    id="registration-home-indicator-ios" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="136" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="32" font-weight="750" text-anchor="start"
+                    id="registration-heading-ios">Create an account</text><text x="24" y="165" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400" text-anchor="start"
+                    id="registration-subtitle-ios">Save your details and track orders.</text>
+                <g transform="translate(0 -36)"><text x="24" y="228" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start" id="registration-name-ios">Full name</text>
+                    <rect x="24" y="238" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="270" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Your full name</text><text x="24" y="311" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Email address</text>
+                    <rect x="24" y="321" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="353" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">you@example.com</text><text x="24" y="394" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Password</text>
+                    <rect x="24" y="404" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="436" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Create a password</text>
+                    <path d="M335 430 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="345" cy="430" r="2.4" fill="#485873" /><text x="24" y="477" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Confirm password</text>
+                    <rect x="24" y="487" width="345" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="519" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Re-enter your password</text>
+                    <path d="M335 513 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="345" cy="513" r="2.4" fill="#485873" /><text x="24" y="579" fill="#485873"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                        text-anchor="start">By continuing, you agree to the</text><text x="24" y="603" fill="#0050CB"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700"
+                        text-anchor="start">Terms of Service</text><text x="151" y="603" fill="#485873"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                        text-anchor="start">and</text><text x="181" y="603" fill="#0050CB"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700"
+                        text-anchor="start">Privacy Policy</text>
+                    <rect x="24" y="628" width="345" height="52" rx="14" fill="#0050CB" /><text x="196.5" y="660"
+                        fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                        text-anchor="middle">Create account</text>
+                </g><text x="196.5" y="816" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                    font-weight="700" text-anchor="middle" id="registration-login-link-ios">Already have an account? Log
+                    in</text>
+                <g id="social-registration-ios" font-family="Inter, DejaVu Sans, sans-serif"
+                    transform="translate(0 14)">
+                    <line x1="24" x2="177.5" y1="651" y2="651" stroke="#C2CEE3" />
+                    <line x1="215.5" x2="369" y1="651" y2="651" stroke="#C2CEE3" /><text x="196.5" y="656"
+                        text-anchor="middle" font-size="14" fill="#485873">or</text>
+                    <g id="registration-google-ios">
+                        <rect x="24" y="669" width="345" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="196.5" y="699" text-anchor="middle" font-size="16" font-weight="700" fill="#08194A">Sign
+                            up with Google</text>
+                    </g>
+                    <g id="registration-facebook-ios">
+                        <rect x="24" y="729" width="345" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="196.5" y="759" text-anchor="middle" font-size="16" font-weight="700" fill="#08194A">Sign
+                            up with Facebook</text>
+                    </g>
+                </g>
+            </g><text x="44" y="1088" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21"
+                font-weight="700" text-anchor="start">Android</text>
+            <g xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" id="launch-android"
+                transform="translate(44 1140)"><text x="1" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Launch</text>
+                <rect x="0" y="0" width="390" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M312 31 l7 -7 7 7 M316 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="337" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="340" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="364" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="143.0" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <image x="93.0" y="68" width="204" height="68"
+                    href="data:image/jpeg;base64,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Fs0RNrgGNV26ir2tbWUcFQ1hy0SxhwHhlfmktdvoHOdR0NNTucMOMUTWEjvwFlomXwDWy6fs08rpZbTQySPOXPfTtJJ7ScLJlt9FPRijmpIJKYAAQvjBYAOXDkslEyxg19LYrRRTtnpbZRwSjk+KBrXDzAXvXW6iudMaevpIKmE845ow9vsKyUTL5BzFHs70hQVXpNPYKNsucguaXgHuDiQFuauy2qvex9ZbaSocxu60ywtcWjsGRyWcilyk+WRhGLT2ygpKZ9NTUVPDA/O/FHGGtdngcgcCsSLTNihkbJFZbex7SHNc2mYCD2jgtqijLJwFrJ9OWOpnfPPZ6CWV5y976dhc49pOFs0RNrgHnBBDSwMgp4mRQsGGsY0Na0dwCw7pY7Ve4RFc7fTVbByE0YdjwPUtgiJtPINJatH6dskgkttmo6eUcpGxAvH9Y8Vu0RG2+Qa+ssVpuE/T1lspKiXGN+WFrnY8SF70dvo7dCYaKlhpoyd4siYGgntwFkorOybXa3sV7UnnB+JYY6iJ8U0bZI3jdcx4yHDsIWq+1XT34Et/5sz9i3CJGycPwtoOMXyjzhp4aeBkEMTI4mDdaxrcNA7AFpa3RenLjN01TaKZ0h5uaCzPju4yt8imFtkH3Qk0/ZiUIyWGjX22xWq0M3bfQQU/UXMYMnxPMrYIirKUpvuk8slJJYR41VJTVsJhqqeKeJ3NkjA4HyK0bNB6XZP0zbLTb+c8clvsJx8y6JFeF1taxCTX0ZEoRlu1k84YIYIhFDEyONowGMaAB5LWHSun3OLjZbeSTkk07f2LboqxsnHeLaDjF8o/LGNjYGMaGtaMBoGAAtZLpmxTzPmls9C+R5LnPdTtJJ7TwW1RRGco7xeCXFPlGNRW6jt0JhoqWGmiJ3iyJgaCe3AWtuOkNP3WXpqy1U8kp5vA3CfEtxlbtFaN1kZd0ZNP1yQ4Raw1sae26UsNpfv0Nrp4pOp+7vOHgTkrcIiidk7HmbbfuTGKisJYPCroqWvgMFXTxTxHmyRgcPYVpqfQ+maWcTRWalEg4jeBcB5EkLoEUwusgu2Mml9SHCMnlo+NaGNDWgBoGAB1L6iLMsF8c0OaWnkeBX1EBqavTVqr27tXBJMzOd188hb7N7C/VBpyy2yQSUdspYZBye2Mbw8+a2iLTxrO3t7nj6lPDjnOAiIsy4REQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREB//9k="
+                    ns1:href="data:image/jpeg;base64,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Fs0RNrgGNV26ir2tbWUcFQ1hy0SxhwHhlfmktdvoHOdR0NNTucMOMUTWEjvwFlomXwDWy6fs08rpZbTQySPOXPfTtJJ7ScLJlt9FPRijmpIJKYAAQvjBYAOXDkslEyxg19LYrRRTtnpbZRwSjk+KBrXDzAXvXW6iudMaevpIKmE845ow9vsKyUTL5BzFHs70hQVXpNPYKNsucguaXgHuDiQFuauy2qvex9ZbaSocxu60ywtcWjsGRyWcilyk+WRhGLT2ygpKZ9NTUVPDA/O/FHGGtdngcgcCsSLTNihkbJFZbex7SHNc2mYCD2jgtqijLJwFrJ9OWOpnfPPZ6CWV5y976dhc49pOFs0RNrgHnBBDSwMgp4mRQsGGsY0Na0dwCw7pY7Ve4RFc7fTVbByE0YdjwPUtgiJtPINJatH6dskgkttmo6eUcpGxAvH9Y8Vu0RG2+Qa+ssVpuE/T1lspKiXGN+WFrnY8SF70dvo7dCYaKlhpoyd4siYGgntwFkorOybXa3sV7UnnB+JYY6iJ8U0bZI3jdcx4yHDsIWq+1XT34Et/5sz9i3CJGycPwtoOMXyjzhp4aeBkEMTI4mDdaxrcNA7AFpa3RenLjN01TaKZ0h5uaCzPju4yt8imFtkH3Qk0/ZiUIyWGjX22xWq0M3bfQQU/UXMYMnxPMrYIirKUpvuk8slJJYR41VJTVsJhqqeKeJ3NkjA4HyK0bNB6XZP0zbLTb+c8clvsJx8y6JFeF1taxCTX0ZEoRlu1k84YIYIhFDEyONowGMaAB5LWHSun3OLjZbeSTkk07f2LboqxsnHeLaDjF8o/LGNjYGMaGtaMBoGAAtZLpmxTzPmls9C+R5LnPdTtJJ7TwW1RRGco7xeCXFPlGNRW6jt0JhoqWGmiJ3iyJgaCe3AWtuOkNP3WXpqy1U8kp5vA3CfEtxlbtFaN1kZd0ZNP1yQ4Raw1sae26UsNpfv0Nrp4pOp+7vOHgTkrcIiidk7HmbbfuTGKisJYPCroqWvgMFXTxTxHmyRgcPYVpqfQ+maWcTRWalEg4jeBcB5EkLoEUwusgu2Mml9SHCMnlo+NaGNDWgBoGAB1L6iLMsF8c0OaWnkeBX1EBqavTVqr27tXBJMzOd188hb7N7C/VBpyy2yQSUdspYZBye2Mbw8+a2iLTxrO3t7nj6lPDjnOAiIsy4REQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREB//9k=" />
+                <rect x="24" y="151" width="342" height="270" rx="25" fill="#EEF4FF" />
+                <circle cx="195.0" cy="284" r="102" fill="#DFEAFF" />
+                <circle cx="195.0" cy="284" r="79" fill="#D3E4FF" />
+                <g transform="rotate(-11 196 279)">
+                    <rect x="123" y="207" width="146" height="160" rx="30" fill="url(#bag)" />
+                    <path d="M166 227 v-22 a30 30 0 0 1 60 0 v22" fill="none" stroke="#A7CCFF" stroke-width="7"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M173 283 l16 16 32 -33" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </g>
+                <circle cx="285" cy="207" r="25" fill="#CFE1FF" />
+                <path d="M285 198 v18 M276 207 h18" fill="none" stroke="#0050CB" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <circle cx="104" cy="327" r="8" fill="#A6CAFF" /><text x="24" y="476" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="36" font-weight="750"
+                    text-anchor="start">Shop with</text><text x="24" y="521" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="34" font-weight="750" text-anchor="start"
+                    id="customer-name-launch-android">Tannix Leather</text><text x="24" y="562" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Browse products and track your orders</text><text x="24" y="585" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">from your phone.</text>
+                <rect x="24" y="638" width="342" height="52" rx="14" fill="#0050CB" /><text x="195.0" y="670"
+                    fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in</text>
+                <rect x="24" y="702" width="342" height="52" rx="14" fill="white" stroke="#ABB8CC" /><text x="195.0"
+                    y="734" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Create an account</text>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="login-android" transform="translate(469 1140)"><text x="1" y="-16"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Login</text>
+                <rect x="0" y="0" width="390" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M312 31 l7 -7 7 7 M316 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="337" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="340" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="364" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="143.0" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="34" font-weight="750"
+                    text-anchor="start">Welcome back</text><text x="24" y="184" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Log in to manage your orders.</text><text x="24" y="248" fill="#111E3C"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Email address</text>
+                <rect x="24" y="258" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                    y="290" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">you@example.com</text><text x="24" y="340" fill="#111E3C"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Password</text>
+                <rect x="24" y="350" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                    y="382" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Enter your password</text>
+                <path d="M332 376 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="342" cy="376" r="2.4" fill="#485873" /><text x="366" y="434" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="end">Forgot password?</text>
+                <rect x="24" y="468" width="342" height="52" rx="14" fill="#0050CB" /><text x="195.0" y="500"
+                    fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in</text><text x="195.0" y="740" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="middle">New to Tannix Leather?</text><text x="195.0" y="772" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="middle">Create an account</text>
+                <g id="social-sign-in-android" font-family="Inter, DejaVu Sans, sans-serif">
+                    <line x1="24" x2="171.0" y1="548" y2="548" stroke="#C2CEE3" />
+                    <line x1="219.0" x2="366" y1="548" y2="548" stroke="#C2CEE3" /><text x="195.0" y="553"
+                        text-anchor="middle" font-size="14" fill="#485873">or</text>
+                    <g id="continue-with-google-android">
+                        <rect x="24" y="570" width="342" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="195.0" y="600" text-anchor="middle" font-size="16" font-weight="700"
+                            fill="#08194A">Continue with Google</text>
+                    </g>
+                    <g id="continue-with-facebook-android">
+                        <rect x="24" y="630" width="342" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="195.0" y="660" text-anchor="middle" font-size="16" font-weight="700"
+                            fill="#08194A">Continue with Facebook</text>
+                    </g>
+                </g>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="registration-android" transform="translate(894 1140)"><text x="1"
+                    y="-16" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Registration</text>
+                <rect x="0" y="0" width="390" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M312 31 l7 -7 7 7 M316 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="337" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="340" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="364" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="143.0" y="827" width="104" height="4" rx="2" fill="#08194A"
+                    id="registration-home-indicator-android" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="136" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="32" font-weight="750" text-anchor="start"
+                    id="registration-heading-android">Create an account</text><text x="24" y="165" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400" text-anchor="start"
+                    id="registration-subtitle-android">Save your details and track orders.</text>
+                <g transform="translate(0 -36)"><text x="24" y="228" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start" id="registration-name-android">Full name</text>
+                    <rect x="24" y="238" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="270" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Your full name</text><text x="24" y="311" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Email address</text>
+                    <rect x="24" y="321" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="353" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">you@example.com</text><text x="24" y="394" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Password</text>
+                    <rect x="24" y="404" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="436" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Create a password</text>
+                    <path d="M332 430 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="342" cy="430" r="2.4" fill="#485873" /><text x="24" y="477" fill="#111E3C"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                        text-anchor="start">Confirm password</text>
+                    <rect x="24" y="487" width="342" height="52" rx="12" fill="white" stroke="#ABB8CC" /><text x="40"
+                        y="519" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                        font-weight="400" text-anchor="start">Re-enter your password</text>
+                    <path d="M332 513 q10 -12 20 0 q-10 12 -20 0" fill="none" stroke="#485873" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="342" cy="513" r="2.4" fill="#485873" /><text x="24" y="579" fill="#485873"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                        text-anchor="start">By continuing, you agree to the</text><text x="24" y="603" fill="#0050CB"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700"
+                        text-anchor="start">Terms of Service</text><text x="151" y="603" fill="#485873"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                        text-anchor="start">and</text><text x="181" y="603" fill="#0050CB"
+                        font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700"
+                        text-anchor="start">Privacy Policy</text>
+                    <rect x="24" y="628" width="342" height="52" rx="14" fill="#0050CB" /><text x="195.0" y="660"
+                        fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                        text-anchor="middle">Create account</text>
+                </g><text x="195.0" y="816" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15"
+                    font-weight="700" text-anchor="middle" id="registration-login-link-android">Already have an account?
+                    Log in</text>
+                <g id="social-registration-android" font-family="Inter, DejaVu Sans, sans-serif"
+                    transform="translate(0 14)">
+                    <line x1="24" x2="176.0" y1="651" y2="651" stroke="#C2CEE3" />
+                    <line x1="214.0" x2="366" y1="651" y2="651" stroke="#C2CEE3" /><text x="195.0" y="656"
+                        text-anchor="middle" font-size="14" fill="#485873">or</text>
+                    <g id="registration-google-android">
+                        <rect x="24" y="669" width="342" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="195.0" y="699" text-anchor="middle" font-size="16" font-weight="700" fill="#08194A">Sign
+                            up with Google</text>
+                    </g>
+                    <g id="registration-facebook-android">
+                        <rect x="24" y="729" width="342" height="48" rx="14" fill="white" stroke="#C2CEE3" /><text
+                            x="195.0" y="759" text-anchor="middle" font-size="16" font-weight="700" fill="#08194A">Sign
+                            up with Facebook</text>
+                    </g>
+                </g>
+            </g>
+        </svg></section>
+    <section id="board1" aria-label="Password reset request"><svg xmlns="http://www.w3.org/2000/svg" width="1330"
+            height="2100" viewBox="0 0 1330 2100">
+            <defs xmlns="http://www.w3.org/2000/svg">
+                <linearGradient id="bag" x2="1" y2="1">
+                    <stop offset="0" stop-color="#246DFF" />
+                    <stop offset="1" stop-color="#00338D" />
+                </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="1330" height="2100" rx="24" fill="#E8EFFA" stroke="none" /><text x="44" y="64"
+                fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="32" font-weight="750"
+                text-anchor="start">Account entry · Request a reset link</text><text x="44" y="102" fill="#485873"
+                font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="400"
+                text-anchor="start">Existing design · Latest saved version · Tannix Leather</text><text x="44" y="148"
+                fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                text-anchor="start">IOS</text>
+            <g xmlns="http://www.w3.org/2000/svg" id="forgot-password-request-ios" transform="translate(44 200)"><text
+                    x="1" y="-16" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18"
+                    font-weight="700" text-anchor="start">Request reset link</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149.5" y="15" width="94" height="25" rx="13" fill="#08194A" />
+                <path d="M315 31 l7 -7 7 7 M319 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="144.5" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A" font-size="32"
+                    font-weight="750" text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Forgot
+                    password?</text><text x="24" y="188" fill="#485873" font-size="15" font-weight="400"
+                    text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Enter the email address linked
+                    to</text><text x="24" y="210" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">your Tannix Leather account.</text><text x="24" y="265"
+                    fill="#08194A" font-size="14" font-weight="700" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Email address</text>
+                <rect x="24" y="276" width="345" height="52" rx="13" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="308" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">you@example.com</text>
+                <rect x="24" y="358" width="345" height="52" rx="14" fill="#0050CB" /><text x="196.5" y="390"
+                    fill="white" font-size="16" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Send reset link</text><text x="196.5" y="455"
+                    fill="#0050CB" font-size="15" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Back to log in</text>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="forgot-password-confirmation-ios" transform="translate(469 200)">
+                <text x="1" y="-16" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18"
+                    font-weight="700" text-anchor="start">Check your email</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149.5" y="15" width="94" height="25" rx="13" fill="#08194A" />
+                <path d="M315 31 l7 -7 7 7 M319 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="144.5" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A" font-size="32"
+                    font-weight="750" text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Check your
+                    email</text><text x="24" y="188" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">If an account is linked to that email,</text><text
+                    x="24" y="210" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">we’ll send a password reset link.</text>
+                <rect x="24" y="250" width="345" height="76" rx="13" fill="#EEF4FF" /><text x="40" y="279"
+                    fill="#08194A" font-size="14" font-weight="700" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Can’t find the email?</text><text x="40" y="303"
+                    fill="#485873" font-size="14" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Check your spam or junk folder.</text>
+                <rect x="24" y="358" width="345" height="52" rx="14" fill="#0050CB" /><text x="196.5" y="390"
+                    fill="white" font-size="16" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Back to log in</text><text x="196.5" y="455"
+                    fill="#0050CB" font-size="15" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Use a different email</text>
+            </g><text x="44" y="1088" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21"
+                font-weight="700" text-anchor="start">Android</text>
+            <g xmlns="http://www.w3.org/2000/svg" id="forgot-password-request-android" transform="translate(44 1140)">
+                <text x="1" y="-16" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="18"
+                    font-weight="700" text-anchor="start">Request reset link</text>
+                <rect x="0" y="0" width="390" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M312 31 l7 -7 7 7 M316 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="337" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="340" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="364" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="143.0" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A" font-size="32"
+                    font-weight="750" text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Forgot
+                    password?</text><text x="24" y="188" fill="#485873" font-size="15" font-weight="400"
+                    text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Enter the email address linked
+                    to</text><text x="24" y="210" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">your Tannix Leather account.</text><text x="24" y="265"
+                    fill="#08194A" font-size="14" font-weight="700" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Email address</text>
+                <rect x="24" y="276" width="342" height="52" rx="13" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="308" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">you@example.com</text>
+                <rect x="24" y="358" width="342" height="52" rx="14" fill="#0050CB" /><text x="195.0" y="390"
+                    fill="white" font-size="16" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Send reset link</text><text x="195.0" y="455"
+                    fill="#0050CB" font-size="15" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Back to log in</text>
+            </g>
+            <g xmlns="http://www.w3.org/2000/svg" id="forgot-password-confirmation-android"
+                transform="translate(469 1140)"><text x="1" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Check your email</text>
+                <rect x="0" y="0" width="390" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M312 31 l7 -7 7 7 M316 33 l3 -3 3 3" fill="none" stroke="#08194A" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="337" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="340" y="27" width="17" height="6" rx="1" fill="#08194A" />
+                <rect x="364" y="28" width="2" height="4" rx="1" fill="#08194A" />
+                <rect x="143.0" y="827" width="104" height="4" rx="2" fill="#08194A" />
+                <rect x="24" y="61" width="44" height="44" rx="13" fill="#EEF4FF" />
+                <path d="M49 75 l-8 8 8 8 M41 83 h14" fill="none" stroke="#08194A" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" /><text x="24" y="154" fill="#08194A" font-size="32"
+                    font-weight="750" text-anchor="start" font-family="Inter, DejaVu Sans, sans-serif">Check your
+                    email</text><text x="24" y="188" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">If an account is linked to that email,</text><text
+                    x="24" y="210" fill="#485873" font-size="15" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">we’ll send a password reset link.</text>
+                <rect x="24" y="250" width="342" height="76" rx="13" fill="#EEF4FF" /><text x="40" y="279"
+                    fill="#08194A" font-size="14" font-weight="700" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Can’t find the email?</text><text x="40" y="303"
+                    fill="#485873" font-size="14" font-weight="400" text-anchor="start"
+                    font-family="Inter, DejaVu Sans, sans-serif">Check your spam or junk folder.</text>
+                <rect x="24" y="358" width="342" height="52" rx="14" fill="#0050CB" /><text x="195.0" y="390"
+                    fill="white" font-size="16" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Back to log in</text><text x="195.0" y="455"
+                    fill="#0050CB" font-size="15" font-weight="700" text-anchor="middle"
+                    font-family="Inter, DejaVu Sans, sans-serif">Use a different email</text>
+            </g>
+        </svg></section>
+    <section id="board2" aria-label="Verification &amp; new password"><svg xmlns="http://www.w3.org/2000/svg"
+            width="1330" height="2100" viewBox="0 0 1330 2100">
+            <rect x="0" y="0" width="1330" height="2100" rx="24" fill="#E8EFFA" stroke="none" /><text x="44" y="64"
+                fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="36" font-weight="750"
+                text-anchor="start">Account entry · Verification &amp; recovery</text><text x="44" y="102"
+                fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="400"
+                text-anchor="start">Tannix Leather · Brilliant Rocket brand colours · Review draft</text><text x="44"
+                y="148" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                text-anchor="start">iOS</text>
+            <g id="verify-ios" transform="translate(44 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Email verification</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="145" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M39 168h34v24H39z m0 0 17 14 17-14" fill="none" stroke="#0050CB" stroke-width="2.5"
+                    stroke-linejoin="round" /><text x="24" y="255" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Verify your email</text><text x="24" y="290" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400" text-anchor="start">We
+                    sent a verification link to</text><text x="24" y="319" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="650"
+                    text-anchor="start">s•••••@example.com</text><text x="196.5" y="354" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use a different email</text>
+                <rect x="24" y="391" width="345" height="88" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="419"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="start">Open the link in your email</text><text x="40" y="446" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">Check your spam or junk folder.</text>
+                <rect x="24" y="515" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="548" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">I have verified my email</text>
+                <rect x="24" y="583" width="345" height="52" rx="14" fill="white" stroke="#C2CEE3" /><text x="196.5"
+                    y="616" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Send another email</text><text x="24" y="688" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">Verification keeps your account ready</text><text x="24" y="712" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">for order updates and recovery.</text><text x="196.5" y="773" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="reset-ios" transform="translate(469 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Reset password</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="125" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <rect x="43" y="154" width="26" height="23" rx="5" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M48 154v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24"
+                    y="233" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+                    text-anchor="start">Set a new password</text><text x="24" y="268" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Choose a unique password for your</text><text x="24" y="292" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Tannix Leather account.</text><text x="24" y="355" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">New password</text>
+                <rect x="24" y="367" width="345" height="54" rx="14" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="401" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Enter your new password</text>
+                <path d="M335 393q10-13 20 0-10 13-20 0z" fill="none" stroke="#485873" stroke-width="1.6" />
+                <circle cx="345" cy="393" r="2.5" fill="#485873" /><text x="24" y="442" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Use a strong password you have not</text><text x="24" y="466" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">used on other accounts.</text><text x="24" y="522" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Confirm new password</text>
+                <rect x="24" y="534" width="345" height="54" rx="14" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="568" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Re-enter your new password</text>
+                <path d="M335 560q10-13 20 0-10 13-20 0z" fill="none" stroke="#485873" stroke-width="1.6" />
+                <circle cx="345" cy="560" r="2.5" fill="#485873" />
+                <rect x="24" y="635" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="668" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Save new password</text><text x="196.5" y="727" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="password_done-ios" transform="translate(894 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Password updated</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="180" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M40 212l11 11 23-25" fill="none" stroke="#0050CB" stroke-width="3.5" stroke-linecap="round"
+                    stroke-linejoin="round" /><text x="24" y="300" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Password updated</text><text x="24" y="338" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Your new password is ready.</text><text x="24" y="362" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Log in to continue shopping.</text>
+                <rect x="24" y="465" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="498" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Back to log in</text>
+                <rect x="24" y="564" width="345" height="87" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="594"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="start">Using Google or Facebook?</text><text x="40" y="620" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Your provider password stays separate.</text>
+            </g><text x="44" y="1088" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21"
+                font-weight="700" text-anchor="start">Android</text>
+            <g id="verify-android" transform="translate(44 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Email verification</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="145" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M39 168h34v24H39z m0 0 17 14 17-14" fill="none" stroke="#0050CB" stroke-width="2.5"
+                    stroke-linejoin="round" /><text x="24" y="255" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Verify your email</text><text x="24" y="290" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400" text-anchor="start">We
+                    sent a verification link to</text><text x="24" y="319" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="650"
+                    text-anchor="start">s•••••@example.com</text><text x="196.5" y="354" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use a different email</text>
+                <rect x="24" y="391" width="345" height="88" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="419"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="start">Open the link in your email</text><text x="40" y="446" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">Check your spam or junk folder.</text>
+                <rect x="24" y="515" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="548" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">I have verified my email</text>
+                <rect x="24" y="583" width="345" height="52" rx="14" fill="white" stroke="#C2CEE3" /><text x="196.5"
+                    y="616" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Send another email</text><text x="24" y="688" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">Verification keeps your account ready</text><text x="24" y="712" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="400"
+                    text-anchor="start">for order updates and recovery.</text><text x="196.5" y="773" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="reset-android" transform="translate(469 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Reset password</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="125" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <rect x="43" y="154" width="26" height="23" rx="5" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M48 154v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24"
+                    y="233" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+                    text-anchor="start">Set a new password</text><text x="24" y="268" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Choose a unique password for your</text><text x="24" y="292" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Tannix Leather account.</text><text x="24" y="355" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">New password</text>
+                <rect x="24" y="367" width="345" height="54" rx="14" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="401" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Enter your new password</text>
+                <path d="M335 393q10-13 20 0-10 13-20 0z" fill="none" stroke="#485873" stroke-width="1.6" />
+                <circle cx="345" cy="393" r="2.5" fill="#485873" /><text x="24" y="442" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Use a strong password you have not</text><text x="24" y="466" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">used on other accounts.</text><text x="24" y="522" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="start">Confirm new password</text>
+                <rect x="24" y="534" width="345" height="54" rx="14" fill="white" stroke="#C2CEE3" /><text x="40"
+                    y="568" fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Re-enter your new password</text>
+                <path d="M335 560q10-13 20 0-10 13-20 0z" fill="none" stroke="#485873" stroke-width="1.6" />
+                <circle cx="345" cy="560" r="2.5" fill="#485873" />
+                <rect x="24" y="635" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="668" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Save new password</text><text x="196.5" y="727" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="password_done-android" transform="translate(894 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Password updated</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="180" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M40 212l11 11 23-25" fill="none" stroke="#0050CB" stroke-width="3.5" stroke-linecap="round"
+                    stroke-linejoin="round" /><text x="24" y="300" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Password updated</text><text x="24" y="338" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Your new password is ready.</text><text x="24" y="362" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Log in to continue shopping.</text>
+                <rect x="24" y="465" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="498" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Back to log in</text>
+                <rect x="24" y="564" width="345" height="87" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="594"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="start">Using Google or Facebook?</text><text x="40" y="620" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Your provider password stays separate.</text>
+            </g>
+        </svg></section>
+    <section id="board3" aria-label="Completion &amp; recovery"><svg xmlns="http://www.w3.org/2000/svg" width="1330"
+            height="2100" viewBox="0 0 1330 2100">
+            <rect x="0" y="0" width="1330" height="2100" rx="24" fill="#E8EFFA" stroke="none" /><text x="44" y="64"
+                fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="36" font-weight="750"
+                text-anchor="start">Account entry · Completion &amp; recovery</text><text x="44" y="102" fill="#485873"
+                font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="400" text-anchor="start">Tannix
+                Leather · iOS and Android · Review draft</text><text x="44" y="148" fill="#0050CB"
+                font-family="Inter, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                text-anchor="start">iOS</text>
+            <g id="verified-ios" transform="translate(44 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Registration complete</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="180" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M40 212l11 11 23-25" fill="none" stroke="#0050CB" stroke-width="3.5" stroke-linecap="round"
+                    stroke-linejoin="round" /><text x="24" y="300" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Email verified</text><text x="24" y="338" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Your Tannix Leather account is ready.</text><text x="24" y="362" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Continue to browse products.</text>
+                <rect x="24" y="465" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="498" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Continue shopping</text><text x="196.5" y="566" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Go to my account</text>
+            </g>
+            <g id="expired-ios" transform="translate(469 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Expired email link</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="160" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <circle cx="56" cy="192" r="18" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M56 180v13l8 5" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24" y="280"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+                    text-anchor="start">This link has expired</text><text x="24" y="319" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Request a fresh email to continue.</text><text x="24" y="343" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">For your account, use the latest link.</text>
+                <rect x="24" y="450" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="483" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Send a new link</text><text x="196.5" y="555" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use a different email</text><text x="196.5" y="773" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="social-ios" transform="translate(894 200)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Social sign-in recovery</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <rect x="149" y="15" width="94" height="25" rx="13" fill="#08194A" stroke="none" />
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="145" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <rect x="43" y="174" width="26" height="23" rx="5" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M48 174v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24"
+                    y="255" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="29" font-weight="700"
+                    text-anchor="start">Finish signing in</text><text x="24" y="293" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Google could not finish signing you in.</text><text x="24" y="317"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Try again or use your account email.</text>
+                <rect x="24" y="425" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="458" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Try Google again</text>
+                <rect x="24" y="493" width="345" height="52" rx="14" fill="white" stroke="#C2CEE3" /><text x="196.5"
+                    y="526" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in with email</text><text x="196.5" y="602" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use another sign-in method</text>
+                <rect x="24" y="650" width="345" height="83" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="679"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Your cart is saved while you retry.</text><text x="40" y="703" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400" text-anchor="start">We
+                    will return you to your shopping.</text>
+            </g><text x="44" y="1088" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="21"
+                font-weight="700" text-anchor="start">Android</text>
+            <g id="verified-android" transform="translate(44 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Registration complete</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="180" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <path d="M40 212l11 11 23-25" fill="none" stroke="#0050CB" stroke-width="3.5" stroke-linecap="round"
+                    stroke-linejoin="round" /><text x="24" y="300" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="700"
+                    text-anchor="start">Email verified</text><text x="24" y="338" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Your Tannix Leather account is ready.</text><text x="24" y="362" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Continue to browse products.</text>
+                <rect x="24" y="465" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="498" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Continue shopping</text><text x="196.5" y="566" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Go to my account</text>
+            </g>
+            <g id="expired-android" transform="translate(469 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Expired email link</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="160" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <circle cx="56" cy="192" r="18" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M56 180v13l8 5" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24" y="280"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+                    text-anchor="start">This link has expired</text><text x="24" y="319" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Request a fresh email to continue.</text><text x="24" y="343" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">For your account, use the latest link.</text>
+                <rect x="24" y="450" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="483" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Send a new link</text><text x="196.5" y="555" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use a different email</text><text x="196.5" y="773" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="social-android" transform="translate(894 1140)"><text x="0" y="-16" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="700"
+                    text-anchor="start">Social sign-in recovery</text>
+                <rect x="0" y="0" width="393" height="844" rx="24" fill="white" stroke="#C2CEE3" /><text x="24" y="35"
+                    fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+                    text-anchor="start">9:41</text>
+                <path d="M315 31l7-7 7 7 M319 33l3-3 3 3" fill="none" stroke="#08194A" stroke-width="1.5" />
+                <rect x="340" y="24" width="25" height="12" rx="3" fill="none" stroke="#08194A" />
+                <rect x="343" y="27" width="17" height="6" rx="1" fill="#08194A" stroke="none" />
+                <rect x="367" y="28" width="2" height="4" rx="1" fill="#08194A" stroke="none" />
+                <rect x="145" y="827" width="104" height="4" rx="2" fill="#08194A" stroke="none" />
+                <rect x="24" y="61" width="44" height="44" rx="14" fill="#EEF4FF" stroke="none" />
+                <path d="M52 74l-9 9 9 9 M43 83h16" stroke="#08194A" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <rect x="24" y="145" width="64" height="64" rx="20" fill="#EEF4FF" stroke="none" />
+                <rect x="43" y="174" width="26" height="23" rx="5" fill="none" stroke="#0050CB" stroke-width="2.5" />
+                <path d="M48 174v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#0050CB" stroke-width="2.5" /><text x="24"
+                    y="255" fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="29" font-weight="700"
+                    text-anchor="start">Finish signing in</text><text x="24" y="293" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Google could not finish signing you in.</text><text x="24" y="317"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="400"
+                    text-anchor="start">Try again or use your account email.</text>
+                <rect x="24" y="425" width="345" height="52" rx="14" fill="#0050CB" stroke="none" /><text x="196.5"
+                    y="458" fill="white" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Try Google again</text>
+                <rect x="24" y="493" width="345" height="52" rx="14" fill="white" stroke="#C2CEE3" /><text x="196.5"
+                    y="526" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" font-weight="700"
+                    text-anchor="middle">Log in with email</text><text x="196.5" y="602" fill="#0050CB"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650"
+                    text-anchor="middle">Use another sign-in method</text>
+                <rect x="24" y="650" width="345" height="83" rx="14" fill="#EEF4FF" stroke="none" /><text x="40" y="679"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Your cart is saved while you retry.</text><text x="40" y="703" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400" text-anchor="start">We
+                    will return you to your shopping.</text>
+            </g>
+        </svg></section>
+    <section id="board4" aria-label="Form and recovery states"><svg xmlns="http://www.w3.org/2000/svg" width="1330"
+            height="2250" viewBox="0 0 1330 2250">
+            <rect x="0" y="0" width="1330" height="2250" rx="24" fill="#E8EFFA" stroke="none" /><text x="44" y="64"
+                fill="#08194A" font-family="Inter, DejaVu Sans, sans-serif" font-size="34" font-weight="750"
+                text-anchor="start">Account entry · Form &amp; recovery states</text><text x="44" y="102" fill="#485873"
+                font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="400" text-anchor="start">UI
+                variants and behaviour for review · Shared across iOS and Android</text>
+            <g id="state-1" transform="translate(44 150)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Login · Wrong credentials</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" text-anchor="start">We
+                    could not log you in.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Check your email and password.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Keep email. Focus the password field.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Try again</text>
+            </g>
+            <g id="state-2" transform="translate(469 150)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Login · Session expired</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Please log in again.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Your cart and checkout progress are saved.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Return to your previous step after login.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Log in</text>
+            </g>
+            <g id="state-3" transform="translate(894 150)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Login · Too many attempts</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Please wait before trying again.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Show the retry time returned by the server.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Offer password recovery when available.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Forgot password?</text>
+            </g>
+            <g id="state-4" transform="translate(44 485)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Registration · Existing email</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">You may already have an account.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Use log in or recover access.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Keep the details you have entered.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="state-5" transform="translate(469 485)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Registration · Invalid input</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Check your email address.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Highlight the field and explain the issue.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Use server password rules and inline feedback.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Review details</text>
+            </g>
+            <g id="state-6" transform="translate(894 485)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Registration · Password mismatch</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Your passwords do not match.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Show both password visibility controls.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Focus confirm password. Keep the form.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Review password</text>
+            </g>
+            <g id="state-7" transform="translate(44 820)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Email · Resend cooldown</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Your email is on its way.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Disable resend while the request runs.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Show server cooldown, then enable resend.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Resend when ready</text>
+            </g>
+            <g id="state-8" transform="translate(469 820)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Verification · Still pending</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Your email is not verified yet.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Open the latest link in your email.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Allow another status check after completion.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Check again</text>
+            </g>
+            <g id="state-9" transform="translate(894 820)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Email link · Used or invalid</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">This link cannot be used.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400" text-anchor="start">If
+                    already verified, show Email verified.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Otherwise request a fresh email link.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Send a new link</text>
+            </g>
+            <g id="state-10" transform="translate(44 1155)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Reset · Link expired or used</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Request a new reset link.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Enter your email to request a fresh link.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Return to the reset form with a valid token.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Request reset link</text>
+            </g>
+            <g id="state-11" transform="translate(469 1155)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Form · Offline or request failed</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" text-anchor="start">We
+                    could not connect.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Keep entered values. Stop the spinner.</text><text x="20" y="145" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Retry when connected. Prevent repeat submits.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Try again</text>
+            </g>
+            <g id="state-12" transform="translate(894 1155)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Social · Cancelled / permission denied</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Sign-in was not completed.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Return to the login screen. Keep the cart.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Offer the provider again or email login.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Back to log in</text>
+            </g>
+            <g id="state-13" transform="translate(44 1490)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Social · Email is unavailable</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Add an email to continue.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Reuse the email field and verify ownership.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Keep the provider result pending verification.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Continue</text>
+            </g>
+            <g id="state-14" transform="translate(469 1490)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Social · Existing account match</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Confirm your existing account.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Require sign-in to the existing account</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">before linking a social sign-in provider.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Log in to continue</text>
+            </g>
+            <g id="state-15" transform="translate(894 1490)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Account · Access unavailable</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Contact support for help.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Explain access restrictions without data loss.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Allow a different account or return to login.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Contact support</text>
+            </g>
+            <g id="state-16" transform="translate(44 1825)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Submit · Checking / saving</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Please wait…</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Show progress in the initiating button.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Keep one request active. Handle retry safely.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Processing…</text>
+            </g>
+            <g id="state-17" transform="translate(469 1825)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Keyboard · Focused field</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Keep the active field visible.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Scroll content above the software keyboard.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Support paste, autofill and larger text.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Next / Done</text>
+            </g>
+            <g id="state-18" transform="translate(894 1825)">
+                <rect x="0" y="0" width="393" height="305" rx="20" fill="white" stroke="#C2CEE3" /><text x="20" y="35"
+                    fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+                    text-anchor="start">Navigation · Incoming email link</text><text x="20" y="83" fill="#08194A"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700"
+                    text-anchor="start">Continue in the correct account.</text><text x="20" y="121" fill="#485873"
+                    font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Validate token, account and store context.</text><text x="20" y="145"
+                    fill="#485873" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400"
+                    text-anchor="start">Return to shopping after authentication.</text>
+                <rect x="20" y="190" width="353" height="48" rx="14" fill="#EEF4FF" stroke="none" /><text x="196.5"
+                    y="220" fill="#0050CB" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="650"
+                    text-anchor="middle">Continue</text>
+            </g>
+        </svg></section>
+</main>
+
+</html>
