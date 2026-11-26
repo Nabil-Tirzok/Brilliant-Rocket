@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:material_ui/material_ui.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:brilliant_rocket/config/app_config.dart';
 import 'package:brilliant_rocket/theme/app_colors.dart';
@@ -24,7 +27,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final TextEditingController emailController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  static const String apiUrl =
+      'http://10.0.2.2:8019/api/v1/auth/forgot-password';
+
   bool resetLinkSent = false;
+  bool isLoading = false;
+
+  String? errorMessage;
 
   @override
   void dispose() {
@@ -32,12 +41,71 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     super.dispose();
   }
 
-  void _sendResetLink() {
-    if (formKey.currentState!.validate()) {
-      setState(() {
-        resetLinkSent = true;
-      });
+  Future<void> _sendResetLink() async {
+    if (isLoading) return;
+
+    if (formKey.currentState?.validate() != true) {
+      return;
     }
+
+    setState(() {
+      isLoading = true;
+      errorMessage = null;
+    });
+
+    try {
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: jsonEncode({
+          'email': emailController.text.trim(),
+        }),
+      );
+
+      final Map<String, dynamic> responseData =
+          jsonDecode(response.body) as Map<String, dynamic>;
+
+      if (response.statusCode >= 200 &&
+          response.statusCode < 300 &&
+          responseData['success'] == true) {
+        if (!mounted) return;
+
+        setState(() {
+          resetLinkSent = true;
+        });
+      } else {
+        if (!mounted) return;
+
+        setState(() {
+          errorMessage =
+              responseData['message'] ?? 'Unable to process your request.';
+        });
+      }
+    } catch (e) {
+      if (!mounted) return;
+
+      setState(() {
+        errorMessage =
+            'Unable to connect to the server. Please try again.';
+      });
+    } finally {
+      if (mounted) {
+        setState(() {
+          isLoading = false;
+        });
+      }
+    }
+  }
+
+  void _useDifferentEmail() {
+    setState(() {
+      resetLinkSent = false;
+      errorMessage = null;
+      emailController.clear();
+    });
   }
 
   @override
@@ -64,6 +132,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             const SizedBox(height: AppDimensions.spaceXXXL + 1),
             const AppBackButton(),
             const SizedBox(height: AppDimensions.spaceLG),
+
             if (!resetLinkSent) ...[
               AppPageHeader(
                 title: 'Forgot password?',
@@ -80,7 +149,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   height: 1.5,
                 ),
               ),
+
               const SizedBox(height: 28),
+
               Form(
                 key: formKey,
                 child: Column(
@@ -94,12 +165,26 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       textInputAction: TextInputAction.done,
                       validator: AppValidators.email,
                     ),
+
+                    if (errorMessage != null) ...[
+                      const SizedBox(height: AppDimensions.spaceMD),
+                      Text(
+                        errorMessage!,
+                        style: AppTextStyles.helper.copyWith(
+                          color: AppColors.error,
+                        ),
+                      ),
+                    ],
+
                     const SizedBox(height: 26),
+
                     PrimaryButton(
-                      text: 'Send reset link',
+                      text: isLoading ? 'Sending...' : 'Send reset link',
                       onPressed: _sendResetLink,
                     ),
+
                     const SizedBox(height: AppDimensions.spaceXL),
+
                     Center(
                       child: AppTextButton(
                         text: 'Back to log in',
@@ -129,27 +214,31 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   height: 1.5,
                 ),
               ),
+
               const SizedBox(height: 28),
+
               const AppInfoCard(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 14),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 14,
+                ),
                 title: 'Can’t find the email?',
                 description: 'Check your spam or junk folder.',
               ),
+
               const SizedBox(height: AppDimensions.spaceXL),
+
               PrimaryButton(
                 text: 'Back to log in',
                 onPressed: () => Navigator.pop(context),
               ),
+
               const SizedBox(height: AppDimensions.spaceXL),
+
               Center(
                 child: AppTextButton(
                   text: 'Use a different email',
-                  onPressed: () {
-                    setState(() {
-                      resetLinkSent = false;
-                      emailController.clear();
-                    });
-                  },
+                  onPressed: _useDifferentEmail,
                   textStyle: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

@@ -11,10 +11,19 @@ import 'package:brilliant_rocket/screens/login/password_updated_screen.dart';
 import 'package:brilliant_rocket/screens/registration/email_verified_screen.dart';
 import 'package:brilliant_rocket/screens/registration/link_expired_screen.dart';
 import 'package:brilliant_rocket/screens/login/finish_signing_screen.dart';
-import 'package:brilliant_rocket/screens/product_details.dart';
+import 'package:brilliant_rocket/screens/product/product_details_screen.dart';
+import 'package:brilliant_rocket/screens/product/product_gallery_screen.dart';
+import 'package:brilliant_rocket/screens/product/product_review_screen.dart';
+import 'package:brilliant_rocket/screens/search/search_screen.dart';
 import 'package:brilliant_rocket/theme/app_theme.dart';
+import 'package:brilliant_rocket/services/deep_link_service.dart';
+import 'package:brilliant_rocket/screens/login/reset_password_screen.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await DeepLinkService.initialize();
+
   runApp(const BrilliantRocketApp());
 }
 
@@ -24,11 +33,13 @@ class BrilliantRocketApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: DeepLinkService.navigatorKey,
+
       title: 'Brilliant Rocket',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
 
-      initialRoute: AppRoutes.launch,
+      initialRoute: AppRoutes.search,
 
       routes: {
         AppRoutes.launch: (context) => const LaunchScreen(),
@@ -41,7 +52,16 @@ class BrilliantRocketApp extends StatelessWidget {
         AppRoutes.emailVerified: (context) => const EmailVerifiedScreen(),
         AppRoutes.linkExpired: (context) => const LinkExpiredScreen(),
         AppRoutes.finishSigning: (context) => const FinishSigningScreen(),
-        AppRoutes.product: (context) => const ProductPage(),
+        AppRoutes.productDetails: (context) => const ProductDetailsPage(),
+        AppRoutes.productGallery: (context) => const ProductGalleryScreen(),
+        AppRoutes.productReviews: (context) => const RatingsScreen(),
+        AppRoutes.search: (context) => const SearchScreen(),
+        AppRoutes.resetPassword: (context) {
+          final token =
+              ModalRoute.of(context)!.settings.arguments as String;
+
+          return ResetPasswordScreen(token: token);
+        },
       },
     );
   }

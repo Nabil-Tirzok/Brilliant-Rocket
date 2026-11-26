@@ -2,7 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 import 'package:brilliant_rocket/theme/app_colors.dart';
 import 'package:brilliant_rocket/theme/app_dimensions.dart';
-import 'app_info_card.dart';
+import '../forms/app_info_card.dart';
 
 class RecoveryCard extends StatelessWidget {
   final String header;

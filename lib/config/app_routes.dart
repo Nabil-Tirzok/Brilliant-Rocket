@@ -11,5 +11,9 @@ class AppRoutes {
   static const emailVerified = '/email-verified';
   static const linkExpired = '/link-expired';
   static const finishSigning = '/finish-signing';
-  static const product = '/product';
+  static const productDetails = '/product-details';
+  static const productGallery = '/product-gallery';
+  static const productReviews = '/product-reviews';
+  static const search = '/search';
+  static const String resetPassword = '/reset-password';
 }

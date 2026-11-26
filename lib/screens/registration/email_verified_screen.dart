@@ -1,12 +1,21 @@
 import 'package:material_ui/material_ui.dart';
 
 import 'package:brilliant_rocket/config/app_config.dart';
+import 'package:brilliant_rocket/config/app_routes.dart';
 import 'package:brilliant_rocket/theme/app_colors.dart';
 import 'package:brilliant_rocket/widgets/buttons/app_text_button.dart';
 import 'package:brilliant_rocket/widgets/status/status_page.dart';
 
 class EmailVerifiedScreen extends StatelessWidget {
   const EmailVerifiedScreen({super.key});
+
+  void _continueToShopping(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      AppRoutes.productDetails,
+      ModalRoute.withName('/product-details'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +28,13 @@ class EmailVerifiedScreen extends StatelessWidget {
           'Continue to browse products.',
       primaryButtonText: 'Continue shopping',
       onPrimaryPressed: () {
-        // TODO: Navigate to shopping screen.
+        _continueToShopping(context);
       },
       secondaryAction: Center(
         child: AppTextButton(
           text: 'Go to my account',
           onPressed: () {
-            // TODO: Navigate to account screen.
+            _continueToShopping(context);
           },
         ),
       ),

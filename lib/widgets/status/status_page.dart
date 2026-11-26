@@ -62,7 +62,7 @@ class StatusPage extends StatelessWidget {
                         icon: icon,
                         iconSize: iconSize,
                       ),
-                      const SizedBox(height: AppDimensions.spaceLG),
+                      const SizedBox(height: AppDimensions.spaceXXXL),
                       AppPageHeader(
                         title: title,
                         description: description,
@@ -75,13 +75,13 @@ class StatusPage extends StatelessWidget {
                         ),
                         spacing: AppDimensions.spaceSM,
                       ),
-                      const SizedBox(height: AppDimensions.spaceXXXL),
+                      const SizedBox(height: 64),
                       PrimaryButton(
                         text: primaryButtonText,
                         onPressed: onPrimaryPressed,
                       ),
                       if (secondaryAction != null) ...[
-                        const SizedBox(height: AppDimensions.spaceSM),
+                        const SizedBox(height: AppDimensions.spaceXL),
                         secondaryAction!,
                       ],
                       if (infoCard != null) ...[

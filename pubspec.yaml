@@ -38,6 +38,8 @@ dependencies:
   flutter_riverpod: ^3.5.0
   go_router: ^18.1.4
   flutter_svg: ^2.4.0
+  http: ^1.6.0
+  app_links: ^7.2.2
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +83,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
         - asset: assets/wallet.png
+        - asset: assets/wallet1.png
+        - asset: assets/wallet2.png
+        - asset: assets/wallet3.png
+        - asset: assets/wallet4.png
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
